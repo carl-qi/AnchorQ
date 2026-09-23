@@ -1,0 +1,70 @@
+{
+  "paper": "Sample-Efficient Reinforcement Learning via Flow-Reversed Action Anchors",
+  "simulation": {
+    "evaluation": "mean over four seeds; uncertainty is one standard error",
+    "benchmarks": [
+      {
+        "name": "LIBERO 15-task held-out split",
+        "zero_shot_success_rate": 9.7,
+        "results": [
+          {
+            "steps": 250000,
+            "dsrl_frs_prefill": {"mean": 35.1, "sem": 2.0},
+            "anchor_q": {"mean": 78.2, "sem": 1.8}
+          },
+          {
+            "steps": 500000,
+            "dsrl_frs_prefill": {"mean": 51.7, "sem": 2.2},
+            "anchor_q": {"mean": 90.9, "sem": 1.2}
+          }
+        ]
+      },
+      {
+        "name": "LIBERO 10-task hard split",
+        "zero_shot_success_rate": 1.5,
+        "results": [
+          {
+            "steps": 250000,
+            "dsrl_frs_prefill": {"mean": 13.2, "sem": 4.3},
+            "anchor_q": {"mean": 51.0, "sem": 1.9}
+          },
+          {
+            "steps": 500000,
+            "dsrl_frs_prefill": {"mean": 30.5, "sem": 2.8},
+            "anchor_q": {"mean": 66.5, "sem": 3.5}
+          }
+        ]
+      }
+    ],
+    "ablation_15_task_split": {
+      "steps": 500000,
+      "dsrl_frs_prefill": {"mean": 51.7, "sem": 2.2},
+      "anchor_q_anchors_only": {"mean": 86.5, "sem": 1.8},
+      "anchor_q_full": {"mean": 90.9, "sem": 1.2}
+    }
+  },
+  "real_world": {
+    "episodes_per_method_task": 20,
+    "tasks": [
+      {
+        "name": "Blue-on-Yellow Cup Stacking",
+        "zero_shot": 65,
+        "dsrl": 75,
+        "anchor_q": 90
+      },
+      {
+        "name": "Bread Retrieval and Plating",
+        "zero_shot": 55,
+        "dsrl": 75,
+        "anchor_q": 95
+      },
+      {
+        "name": "Dishwasher-Rack Towel Hanging",
+        "zero_shot": 45,
+        "dsrl": 45,
+        "anchor_q": 75
+      }
+    ]
+  },
+  "source": "Tables 1, 2, and 3 of the anonymous manuscript draft"
+}

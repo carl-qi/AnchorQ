@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="400" viewBox="0 0 1400 400" role="img" aria-labelledby="title desc">
+  <title id="title">Anchor Q</title>
+  <desc id="desc">Sample-Efficient Reinforcement Learning via Flow-Reversed Action Anchors</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071a24"/>
+      <stop offset="0.58" stop-color="#10313a"/>
+      <stop offset="1" stop-color="#173d43"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="72%" cy="48%" r="60%">
+      <stop offset="0" stop-color="#5ee0c1" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#5ee0c1" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#001016" flood-opacity=".45"/>
+    </filter>
+  </defs>
+  <rect width="1400" height="400" rx="28" fill="url(#bg)"/>
+  <rect width="1400" height="400" rx="28" fill="url(#glow)"/>
+
+  <g opacity=".22" fill="none" stroke="#8ee8d2" stroke-width="2">
+    <path d="M890 88 C1020 40 1120 86 1240 38"/>
+    <path d="M870 154 C1010 104 1140 172 1310 102"/>
+    <path d="M900 236 C1040 176 1168 270 1340 190"/>
+    <path d="M850 318 C1010 250 1140 352 1295 286"/>
+  </g>
+
+  <g transform="translate(1040 205)" filter="url(#shadow)">
+    <circle r="108" fill="#0b252d" stroke="#5ee0c1" stroke-width="3"/>
+    <circle r="58" fill="#123943" stroke="#f4c95d" stroke-width="3"/>
+    <circle r="15" fill="#f4c95d"/>
+    <g fill="#5ee0c1">
+      <circle cx="-118" cy="0" r="12"/>
+      <circle cx="118" cy="0" r="12"/>
+      <circle cx="0" cy="-118" r="12"/>
+      <circle cx="0" cy="118" r="12"/>
+      <circle cx="-84" cy="-84" r="10"/>
+      <circle cx="84" cy="84" r="10"/>
+    </g>
+    <g stroke="#5ee0c1" stroke-width="4" stroke-linecap="round">
+      <path d="M-103 0 H-64"/>
+      <path d="M103 0 H64"/>
+      <path d="M0 -103 V-64"/>
+      <path d="M0 103 V64"/>
+      <path d="M-72 -72 L-46 -46"/>
+      <path d="M72 72 L46 46"/>
+    </g>
+  </g>
+
+  <text x="92" y="118" fill="#8ee8d2" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5">FROZEN POLICY · ONLINE VALUE LEARNING</text>
+  <text x="88" y="230" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="92" font-weight="800" letter-spacing="-3">ANCHOR Q</text>
+  <text x="94" y="296" fill="#d7e6e4" font-family="Inter, Arial, sans-serif" font-size="31" font-weight="500">Sample-Efficient Reinforcement Learning via</text>
+  <text x="94" y="340" fill="#d7e6e4" font-family="Inter, Arial, sans-serif" font-size="31" font-weight="500">Flow-Reversed Action Anchors</text>
+</svg>
+
