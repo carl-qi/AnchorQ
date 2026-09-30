@@ -3,33 +3,101 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Anchor Q: Sample-Efficient Reinforcement Learning via Flow-Reversed Action Anchors</title>
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      background: #fff;
-      color: #111;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    }
-    h1 {
-      max-width: 40ch;
-      margin: 0;
-      font-size: clamp(1.5rem, 4vw, 2.75rem);
-      font-weight: 600;
-      line-height: 1.25;
-      text-align: center;
-      text-wrap: balance;
-    }
-  </style>
+  <meta name="description" content="Anchor Q: Sample-Efficient Reinforcement Learning via Flow-Reversed Action Anchors. An anonymous research submission.">
+  <meta name="color-scheme" content="light">
+  <title>AnchorQ: Sample-Efficient Reinforcement Learning via Flow-Reversed Action Anchors</title>
+  <link rel="icon" href="data:,">
+  <link rel="preload" href="./media/fonts/google-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./main.js" defer></script>
 </head>
 <body>
-  <h1>Anchor Q: Sample-Efficient Reinforcement Learning via Flow-Reversed Action Anchors</h1>
+  <main class="project">
+    <header class="project-header">
+      <h1>
+        <span class="project-name">AnchorQ</span>:
+        Sample-Efficient Reinforcement Learning via Flow-Reversed Action Anchors
+      </h1>
+
+      <p class="authors">
+        <a href="" data-placeholder aria-disabled="true" tabindex="-1">Anonymous Authors</a>
+      </p>
+      <p class="submission">Anonymous submission</p>
+
+      <!-- Leave resource and author destinations empty for anonymous review. -->
+      <nav class="publication-links" aria-label="Publication resources">
+        <a class="resource-link" href="" data-placeholder aria-disabled="true" tabindex="-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/>
+            <path d="M14 3v5h5M8 12h8M8 16h6"/>
+          </svg>
+          Paper
+        </a>
+        <a class="resource-link" href="" data-placeholder aria-disabled="true" tabindex="-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 3 12 18M7 21l5-7M12 10l5-7"/>
+          </svg>
+          arXiv
+        </a>
+        <a class="resource-link" href="" data-placeholder aria-disabled="true" tabindex="-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/>
+          </svg>
+          Code
+        </a>
+      </nav>
+    </header>
+
+    <figure class="teaser">
+      <div class="video-frame">
+        <video
+          id="teaser-video"
+          width="1920"
+          height="1080"
+          poster="./media/bread-poster.jpg"
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+          preload="metadata"
+          aria-label="Task: Take the bread out of the toaster and place it on the blue plate. A comparison of π₀.₅ zero-shot at 2× and AnchorQ at 4×. One hour of RL, no human demos. Followed by nine real-world demonstrations of towel hanging, bread placement, and cup stacking. Green borders mark completed demonstrations."
+        >
+          <source src="./media/real-world-teaser.mp4" type='video/mp4; codecs="avc1.640029"'>
+          <source src="./media/real-world-teaser.webm" type='video/webm; codecs="vp9"'>
+          Your browser does not support embedded video.
+          <a href="./media/real-world-teaser.mp4">Download the AnchorQ real-world demonstrations.</a>
+        </video>
+      </div>
+    </figure>
+
+    <section class="method-section" aria-labelledby="method-title">
+      <h2 id="method-title">
+        How does AnchorQ work?
+      </h2>
+      <figure class="method-figure">
+        <div class="video-frame method-video-frame">
+          <video
+            id="main-figure-video"
+            width="2160"
+            height="592"
+            poster="./media/main-figure-poster.jpg"
+            autoplay
+            muted
+            loop
+            playsinline
+            controls
+            preload="metadata"
+            aria-labelledby="method-title"
+          >
+            <source src="./media/main_figure_gif.mp4" type='video/mp4; codecs="avc1.640020"'>
+            <source src="./media/main_figure_gif.webm" type='video/webm; codecs="vp9"'>
+            Your browser does not support embedded video.
+            <a href="./media/main_figure_gif.mp4">Download the AnchorQ method animation.</a>
+          </video>
+        </div>
+      </figure>
+    </section>
+  </main>
 </body>
 </html>
