@@ -98,6 +98,58 @@
         </div>
       </figure>
     </section>
+
+    <section class="results-section" aria-labelledby="results-title">
+      <h2 id="results-title">Real-world results</h2>
+
+      <figure class="results-figure">
+        <a href="./media/real_world_figure.pdf" target="_blank" rel="noopener" aria-label="Open the real-world results figure as a PDF">
+          <img
+            src="./media/real-world-results.png"
+            width="2160"
+            height="906"
+            loading="lazy"
+            decoding="async"
+            alt="Success rates for π₀.₅, DSRL, and AnchorQ on Stack Cups, Toast Bread, and Hang Towel, followed by the average across tasks."
+          >
+        </a>
+      </figure>
+
+      <nav class="task-selector" aria-label="Choose a real-world task">
+        <a href="./media/results/stack-cups-anchorq.mp4" data-results-task="stack-cups" aria-current="true" aria-controls="results-video">Stack Cups</a>
+        <a href="./media/results/toast-bread-anchorq.mp4" data-results-task="toast-bread" aria-controls="results-video">Toast Bread</a>
+        <a href="./media/results/hang-towel-anchorq.mp4" data-results-task="hang-towel" aria-controls="results-video">Hang Towel</a>
+      </nav>
+
+      <div class="video-frame results-video-frame">
+        <video
+          id="results-video"
+          width="1920"
+          height="1080"
+          poster="./media/results/stack-cups-anchorq.jpg"
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+          preload="metadata"
+          aria-label="Stack Cups with AnchorQ: 20 trials. Green borders indicate success and red borders indicate failure."
+        >
+          <source src="./media/results/stack-cups-anchorq.mp4" type='video/mp4; codecs="avc1.640029"'>
+          <source src="./media/results/stack-cups-anchorq.webm" type='video/webm; codecs="vp9"'>
+          Your browser does not support embedded video.
+          <a id="results-download" href="./media/results/stack-cups-anchorq.mp4">Download the selected task collage.</a>
+        </video>
+      </div>
+
+      <nav class="result-methods" aria-label="Choose a comparison method">
+        <span>Method:</span>
+        <a href="./media/results/stack-cups-anchorq.mp4" data-results-method="anchorq" aria-current="true" aria-controls="results-video">AnchorQ</a>
+        <a href="./media/results/stack-cups-pi05.mp4" data-results-method="pi05" aria-controls="results-video">π<sub>0.5</sub></a>
+        <a href="./media/results/stack-cups-dsrl.mp4" data-results-method="dsrl" aria-controls="results-video">DSRL</a>
+      </nav>
+      <p id="results-status" class="sr-only" role="status">Showing AnchorQ on Stack Cups.</p>
+    </section>
   </main>
 </body>
 </html>
