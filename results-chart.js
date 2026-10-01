@@ -86,7 +86,6 @@
             ${methods.map((method, index) => renderBar(group, method, index)).join("")}
           </div>
         </div>
-        <p class="chart-sample-size">${aggregate ? "60 evaluations / method" : "20 evaluations / method"}</p>
         ${aggregate ? `
           <div class="chart-average-context">
             <span class="chart-average-label">AnchorQ vs. baselines</span>

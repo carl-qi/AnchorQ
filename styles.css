@@ -388,13 +388,6 @@ video:focus-visible {
   bottom: 0;
 }
 
-.chart-sample-size {
-  margin: 14px 0 0;
-  color: #525b55;
-  text-align: center;
-  font-size: 11px;
-  line-height: 1.5;
-}
 
 .chart-hint {
   margin: 20px 0 0;
@@ -546,9 +539,6 @@ video:focus-visible {
     font-size: 11px;
   }
 
-  .chart-sample-size {
-    font-size: 10px;
-  }
 }
 
 .task-selector {

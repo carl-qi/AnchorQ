@@ -121,12 +121,6 @@
     checkpointSlider.setAttribute('aria-valuetext', `${checkpoint / 1000}k steps`);
     checkpointSlider.style.setProperty('--sim-progress', `${(checkpoint - 100000) / 4000}%`);
     section.querySelector('#sim-checkpoint-value').value = `${checkpoint / 1000}k`;
-    section.querySelector('#sim-data-table').innerHTML = `
-      <table><caption class="sr-only">${escape(data.label)} at ${checkpoint / 1000}k steps; mean success ±1 SEM (%)</caption>
-        <thead><tr><th scope="col">Task</th>${methods.map(method => `<th scope="col">${method.label}</th>`).join('')}</tr></thead>
-        <tbody>${data.tasks.map(task => `<tr><th scope="row">${task.id} · ${escape(capitalize(task.name))}</th>${methods.map(method => `<td>${score(values.tasks[task.id][method.id])}</td>`).join('')}</tr>`).join('')}
-          <tr><th scope="row">Average · all ${data.tasks.length} tasks</th>${methods.map(method => `<td>${score(values.average[method.id])}</td>`).join('')}</tr>
-        </tbody></table>`;
   }
 
   [taskSVG, averageSVG].forEach(svg => {

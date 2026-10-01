@@ -160,7 +160,7 @@
     <section class="results-section simulation-section" aria-labelledby="simulation-title">
       <h2 id="simulation-title">Simulation Results</h2>
       <p class="results-summary">
-        We compare π<sub>0.5</sub>, DSRL, and AnchorQ with adaptive particle tilting on two LIBERO-90 task suites. Each plot shows individual task success followed by the average across tasks, with mean ±1 standard error over four training seeds.
+        We compare π<sub>0.5</sub>, DSRL, and AnchorQ with adaptive particle tilting on two LIBERO-90 task suites. Each plot shows individual task success across 100 episodes followed by the average across tasks, with mean ±1 standard error over four training seeds.
       </p>
 
       <figure class="simulation-figure" aria-label="Simulation success rates by task and method">
@@ -205,10 +205,6 @@
         <figcaption class="chart-caption">
           <p>Task and average error bars show ±1 SEM across four seeds. The average includes every task in the selected suite.</p>
         </figcaption>
-        <details class="chart-data sim-data">
-          <summary>View task descriptions and data</summary>
-          <div id="sim-data-table" class="chart-table-wrap"></div>
-        </details>
       </figure>
 
       <div class="sim-rollouts" aria-labelledby="sim-rollouts-title">
@@ -254,7 +250,7 @@
           <button id="sim-play-pair" type="button">Play both</button>
           <button id="sim-replay-pair" type="button">Replay both</button>
         </div>
-        <p class="sim-video-note">Example rollouts from the 15-task suite, using training seed 0 for both methods. Videos use the nearest recorded checkpoint.</p>
+        <p class="sim-video-note">For AnchorQ rollouts, the colored overlays identify the nearest anchor and its reference direction from the executed latent.</p>
         <p id="sim-video-status" class="sr-only" role="status"></p>
       </div>
     </section>

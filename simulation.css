@@ -51,7 +51,6 @@
 .sim-tooltip dl { display: grid; grid-template-columns: 1fr auto; gap: 5px 14px; margin: 0; }
 .sim-tooltip dt, .sim-tooltip dd { margin: 0; }
 .sim-tooltip dd { font-variant-numeric: tabular-nums; text-align: right; }
-.sim-data th:first-child { min-width: 240px; max-width: 400px; white-space: normal; }
 .sim-rollouts { margin-top: 42px; }
 .sim-rollouts > h3 { margin: 0 0 22px; text-align: center; font-size: 23px; letter-spacing: -.3px; }
 .sim-video-selectors { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 16px; }
