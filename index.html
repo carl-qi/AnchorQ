@@ -10,8 +10,11 @@
   <link rel="apple-touch-icon" href="./media/anchor_icon.png">
   <link rel="preload" href="./media/fonts/google-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./simulation.css">
   <script src="./main.js" defer></script>
   <script src="./results-chart.js" defer></script>
+  <script src="./simulation-data.js" defer></script>
+  <script src="./simulation.js" defer></script>
 </head>
 <body>
   <main class="project">
@@ -152,6 +155,108 @@
         <a href="./media/results/stack-cups-dsrl.mp4" data-results-method="dsrl" aria-controls="results-video">DSRL</a>
       </nav>
       <p id="results-status" class="sr-only" role="status">Showing AnchorQ on Stack Cups.</p>
+    </section>
+
+    <section class="results-section simulation-section" aria-labelledby="simulation-title">
+      <h2 id="simulation-title">Simulation Results</h2>
+      <p class="results-summary">
+        We compare π<sub>0.5</sub>, DSRL, and AnchorQ with adaptive particle tilting on two LIBERO-90 task suites. Each plot shows individual task success followed by the average across tasks, with mean ±1 standard error over four training seeds.
+      </p>
+
+      <figure class="simulation-figure" aria-label="Simulation success rates by task and method">
+        <div class="sim-chart">
+          <div class="sim-controls">
+            <div class="sim-suite-picker" role="group" aria-label="Simulation task suite">
+              <button type="button" data-sim-suite="libero15" aria-pressed="true">15-task suite</button>
+              <button type="button" data-sim-suite="hard10" aria-pressed="false">Hard-10 suite</button>
+            </div>
+            <div class="sim-budget-picker" role="group" aria-label="Training environment steps">
+              <button type="button" data-sim-budget="100000" aria-pressed="false">100k</button>
+              <button type="button" data-sim-budget="200000" aria-pressed="false">200k</button>
+              <button type="button" data-sim-budget="300000" aria-pressed="false">300k</button>
+              <button type="button" data-sim-budget="400000" aria-pressed="false">400k</button>
+              <button type="button" data-sim-budget="500000" aria-pressed="true">500k</button>
+            </div>
+          </div>
+          <div class="sim-legend-row">
+            <span>Success rate (%)</span>
+            <ul class="sim-legend" aria-label="Methods">
+              <li><span class="sim-swatch sim-pi05" aria-hidden="true"></span>π<sub>0.5</sub> zero-shot</li>
+              <li><span class="sim-swatch sim-dsrl" aria-hidden="true"></span>DSRL</li>
+              <li><span class="sim-swatch sim-anchorq" aria-hidden="true"></span>AnchorQ</li>
+            </ul>
+          </div>
+          <div class="sim-plot-layout">
+            <div class="sim-task-pane">
+              <h3>Per-task success</h3>
+              <div class="sim-task-scroll" tabindex="0" aria-label="Per-task chart; scroll horizontally to see all tasks">
+                <svg id="sim-task-plot" height="280" role="group" aria-label="Per-task success rates"></svg>
+              </div>
+              <p class="sim-axis-caption">LIBERO-90 task ID · hover or select a task for details</p>
+            </div>
+            <div class="sim-average-pane">
+              <h3>Average</h3>
+              <svg id="sim-average-plot" height="280" role="group" aria-label="Average success rates"></svg>
+              <p id="sim-average-caption" class="sim-axis-caption">All 15 tasks</p>
+            </div>
+          </div>
+          <div id="sim-tooltip" class="sim-tooltip" role="tooltip" hidden></div>
+        </div>
+        <figcaption class="chart-caption">
+          <p>Task and average error bars show ±1 SEM across four seeds. The average includes every task in the selected suite.</p>
+        </figcaption>
+        <details class="chart-data sim-data">
+          <summary>View task descriptions and data</summary>
+          <div id="sim-data-table" class="chart-table-wrap"></div>
+        </details>
+      </figure>
+
+      <div class="sim-rollouts" aria-labelledby="sim-rollouts-title">
+        <h3 id="sim-rollouts-title">Watch the policies learn</h3>
+        <div class="sim-video-selectors">
+          <label for="sim-video-task">Task
+            <select id="sim-video-task" aria-controls="sim-dsrl-video sim-anchorq-video"></select>
+          </label>
+          <div class="sim-checkpoint-control">
+            <div class="sim-checkpoint-heading">
+              <label for="sim-video-checkpoint">Training checkpoint</label>
+              <output id="sim-checkpoint-value" for="sim-video-checkpoint">500k</output>
+            </div>
+            <input id="sim-video-checkpoint" type="range" min="100000" max="500000" step="100000" value="500000"
+              aria-valuetext="500k steps" aria-controls="sim-task-plot sim-average-plot sim-dsrl-video sim-anchorq-video">
+            <div class="sim-checkpoint-ticks" aria-hidden="true"><span>100k</span><span>200k</span><span>300k</span><span>400k</span><span>500k</span></div>
+          </div>
+        </div>
+        <p id="sim-task-description" class="sim-task-description"></p>
+        <div class="sim-video-pair">
+          <figure class="sim-video-card">
+            <figcaption><h4><span class="sim-swatch sim-dsrl" aria-hidden="true"></span>DSRL</h4><span id="sim-dsrl-step"></span></figcaption>
+            <div class="video-frame sim-video-frame">
+              <video id="sim-dsrl-video" width="448" height="224" muted playsinline controls preload="none" poster="./media/simulation/task-081/500k/dsrl.jpg" aria-label="DSRL simulation rollout">
+                <source src="./media/simulation/task-081/500k/dsrl.mp4" type="video/mp4">
+                <source src="./media/simulation/task-081/500k/dsrl.webm" type="video/webm">
+                <a href="./media/simulation/task-081/500k/dsrl.mp4">Download the DSRL rollout.</a>
+              </video>
+            </div>
+          </figure>
+          <figure class="sim-video-card">
+            <figcaption><h4><span class="sim-swatch sim-anchorq" aria-hidden="true"></span>AnchorQ</h4><span id="sim-anchorq-step"></span></figcaption>
+            <div class="video-frame sim-video-frame">
+              <video id="sim-anchorq-video" width="448" height="224" muted playsinline controls preload="none" poster="./media/simulation/task-081/500k/anchorq.jpg" aria-label="AnchorQ with adaptive particle tilting simulation rollout">
+                <source src="./media/simulation/task-081/500k/anchorq.mp4" type="video/mp4">
+                <source src="./media/simulation/task-081/500k/anchorq.webm" type="video/webm">
+                <a href="./media/simulation/task-081/500k/anchorq.mp4">Download the AnchorQ rollout.</a>
+              </video>
+            </div>
+          </figure>
+        </div>
+        <div class="sim-playback">
+          <button id="sim-play-pair" type="button">Play both</button>
+          <button id="sim-replay-pair" type="button">Replay both</button>
+        </div>
+        <p class="sim-video-note">Example rollouts from the 15-task suite, using training seed 0 for both methods. Videos use the nearest recorded checkpoint.</p>
+        <p id="sim-video-status" class="sr-only" role="status"></p>
+      </div>
     </section>
   </main>
 </body>
