@@ -1,15 +1,21 @@
 @font-face {
-  font-family: "Google Sans";
+  font-family: "Inter";
   font-style: normal;
-  font-weight: 400 700;
+  font-weight: 400 800;
   font-display: swap;
-  src: url("./media/fonts/google-sans-latin.woff2") format("woff2");
+  src: url("./media/fonts/inter-latin.woff2") format("woff2");
 }
 
 :root {
   --text-color: #111111;
   --secondary-text-color: #303030;
-  font-family: "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --muted-color: #5b6270;
+  --line-color: #e3e7ee;
+  --soft-background: #f5f7fa;
+  --accent-color: #0a8fb8;
+  --content-width: 1120px;
+  --text-width: 820px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   color: var(--text-color);
   background: #fff;
   font-synthesis: none;
@@ -24,16 +30,41 @@
 body {
   margin: 0;
   color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.65;
 }
 
-.project {
-  width: min(100% - 48px, 960px);
+.project,
+.hero-meta,
+.hero-title {
+  width: 100%;
+  max-width: var(--content-width);
   margin: 0 auto;
-  padding: 48px 0 40px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .project-header {
+  padding-top: 56px;
   text-align: center;
+}
+
+.hero-title {
+  color: var(--text-color);
+}
+
+.hero-media {
+  width: 100%;
+  background: #0d0f12;
+}
+
+.teaser {
+  margin: 0;
+}
+
+.hero-media .video-frame {
+  border-radius: 0;
+  background: #0d0f12;
 }
 
 h1 {
@@ -41,7 +72,7 @@ h1 {
   font-size: clamp(30px, 4.2vw, 48px);
   font-weight: 700;
   line-height: 1.14;
-  letter-spacing: -1.45px;
+  letter-spacing: -.03em;
   text-wrap: balance;
 }
 
@@ -54,14 +85,18 @@ h1 {
   white-space: nowrap;
 }
 
+.hero-meta {
+  padding-top: 24px;
+  padding-bottom: 40px;
+}
+
 .authors {
-  margin: 24px 0 0;
-  font-size: 20px;
-  line-height: 1.5;
+  margin: 0 0 4px;
+  font-size: 1.05rem;
 }
 
 .authors a {
-  color: #075f91;
+  color: var(--text-color);
   text-decoration: none;
 }
 
@@ -70,47 +105,41 @@ a[data-placeholder] {
 }
 
 .submission {
-  margin: 4px 0 0;
-  color: var(--secondary-text-color);
-  font-size: 17px;
-  line-height: 1.5;
+  margin: 0 0 22px;
+  color: var(--muted-color);
+  font-size: .92rem;
 }
 
 .publication-links {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 20px;
+  gap: 10px;
 }
 
 .resource-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
-  min-height: 40px;
-  padding: 8px 17px;
+  padding: 8px 20px;
+  border: 1px solid transparent;
   border-radius: 999px;
   color: #fff;
-  background: #242424;
-  font-size: 16px;
-  line-height: 1.5;
+  background: var(--text-color);
+  font-size: .92rem;
+  font-weight: 600;
   text-decoration: none;
 }
 
-.resource-link svg {
-  width: 18px;
-  height: 18px;
-}
-
-.teaser {
-  margin: 40px 0 0;
+.resource-link[data-placeholder] {
+  border-color: var(--line-color);
+  color: var(--muted-color);
+  background: var(--soft-background);
 }
 
 .video-frame {
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 12px;
   background: #efefef;
   aspect-ratio: 16 / 9;
 }
@@ -123,29 +152,31 @@ video {
 }
 
 video:focus-visible {
-  outline: 3px solid #6557ac;
+  outline: 3px solid var(--accent-color);
   outline-offset: -3px;
 }
 
 .method-section,
 .results-section {
-  margin-top: 72px;
+  padding: 56px 0;
+}
+
+.project > section + section {
+  border-top: 1px solid var(--line-color);
 }
 
 .method-section h2,
 .results-section h2 {
-  max-width: 900px;
-  margin: 0 auto 28px;
-  font-size: clamp(26px, 3vw, 32px);
+  margin: 0 0 16px;
+  font-size: 1.75rem;
   font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: -0.5px;
-  text-align: center;
-  text-wrap: balance;
+  line-height: 1.3;
+  letter-spacing: -.02em;
+  text-align: left;
 }
 
 .method-figure {
-  margin: 0;
+  margin: 28px 0 0;
 }
 
 .method-video-frame {
@@ -155,10 +186,11 @@ video:focus-visible {
 }
 
 .results-summary {
-  max-width: 900px;
-  margin: 0 auto 28px;
-  font-size: clamp(16px, 1.8vw, 18px);
-  line-height: 1.6;
+  max-width: var(--text-width);
+  margin: 0 0 24px;
+  color: var(--secondary-text-color);
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
 .results-figure {
@@ -168,8 +200,8 @@ video:focus-visible {
 .results-chart {
   position: relative;
   padding: 26px 20px 18px;
-  border: 1px solid #e4e7e5;
-  border-radius: 18px;
+  border: 1px solid var(--line-color);
+  border-radius: 12px;
   background: #fff;
 }
 
@@ -620,52 +652,26 @@ video:focus-visible {
   border: 0;
 }
 
-@media (max-width: 600px) {
-  .project {
-    width: calc(100% - 32px);
+@media (max-width: 560px) {
+  .project,
+  .hero-meta,
+  .hero-title {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .project-header {
     padding-top: 32px;
-    padding-bottom: 28px;
   }
 
-  h1 {
-    font-size: clamp(28px, 6.5vw, 38px);
-    line-height: 1.18;
-    letter-spacing: -0.7px;
-  }
-
-  .authors {
-    margin-top: 20px;
-    font-size: 18px;
-  }
-
-  .submission {
-    font-size: 16px;
-  }
-
-  .publication-links {
-    margin-top: 18px;
-  }
-
-  .teaser {
-    margin-top: 30px;
-  }
-
-  .video-frame {
-    border-radius: 7px;
+  .hero-meta {
+    padding-top: 20px;
+    padding-bottom: 32px;
   }
 
   .method-section,
   .results-section {
-    margin-top: 48px;
-  }
-
-  .method-section h2,
-  .results-section h2 {
-    margin-bottom: 22px;
-  }
-
-  .method-video-frame {
-    border-radius: 0;
+    padding: 40px 0;
   }
 
   .task-selector {
@@ -687,9 +693,14 @@ video:focus-visible {
 
 @media (forced-colors: active) {
   .project-name {
-    background: none;
     color: CanvasText;
-    -webkit-text-fill-color: currentColor;
+    background: none;
+    -webkit-text-fill-color: CanvasText;
+  }
+
+  .hero-title {
+    color: CanvasText;
+    background: Canvas;
   }
 
   .resource-link {

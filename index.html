@@ -8,7 +8,7 @@
   <title>AnchorQ: Sample-Efficient Reinforcement Learning via Flow-Reversed Action Anchors</title>
   <link rel="icon" type="image/png" sizes="512x512" href="./media/anchor_icon.png">
   <link rel="apple-touch-icon" href="./media/anchor_icon.png">
-  <link rel="preload" href="./media/fonts/google-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./media/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./simulation.css">
   <script src="./main.js" defer></script>
@@ -17,13 +17,14 @@
   <script src="./simulation.js" defer></script>
 </head>
 <body>
-  <main class="project">
-    <header class="project-header">
+  <header class="project-header" id="top">
+    <div class="hero-title">
       <h1>
         <span class="project-name">AnchorQ</span>:
-        Sample-Efficient Reinforcement Learning via Flow-Reversed Action Anchors
+        <span class="project-subtitle">Sample-Efficient Reinforcement Learning via Flow-Reversed Action Anchors</span>
       </h1>
-
+    </div>
+    <div class="hero-meta">
       <p class="authors">
         <a href="" data-placeholder aria-disabled="true" tabindex="-1">Anonymous Authors</a>
       </p>
@@ -32,49 +33,43 @@
       <!-- Leave resource and author destinations empty for anonymous review. -->
       <nav class="publication-links" aria-label="Publication resources">
         <a class="resource-link" href="" data-placeholder aria-disabled="true" tabindex="-1">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/>
-            <path d="M14 3v5h5M8 12h8M8 16h6"/>
-          </svg>
           Paper
         </a>
         <a class="resource-link" href="" data-placeholder aria-disabled="true" tabindex="-1">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m6 3 12 18M7 21l5-7M12 10l5-7"/>
-          </svg>
           arXiv
         </a>
         <a class="resource-link" href="" data-placeholder aria-disabled="true" tabindex="-1">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/>
-          </svg>
           Code
         </a>
       </nav>
-    </header>
+    </div>
+    <div class="hero-media">
+      <figure class="teaser">
+        <div class="video-frame">
+          <video
+            id="teaser-video"
+            width="1920"
+            height="1080"
+            poster="./media/bread-poster.jpg"
+            autoplay
+            muted
+            loop
+            playsinline
+            controls
+            preload="metadata"
+            aria-label="Task: Take the bread out of the toaster and place it on the blue plate. A comparison of π₀.₅ zero-shot at 2× and AnchorQ at 4×. One hour of RL, no human demos. Followed by nine real-world demonstrations of towel hanging, bread placement, and cup stacking. Green borders mark completed demonstrations."
+          >
+            <source src="./media/real-world-teaser.mp4" type='video/mp4; codecs="avc1.640029"'>
+            <source src="./media/real-world-teaser.webm" type='video/webm; codecs="vp9"'>
+            Your browser does not support embedded video.
+            <a href="./media/real-world-teaser.mp4">Download the AnchorQ real-world demonstrations.</a>
+          </video>
+        </div>
+      </figure>
+    </div>
+  </header>
 
-    <figure class="teaser">
-      <div class="video-frame">
-        <video
-          id="teaser-video"
-          width="1920"
-          height="1080"
-          poster="./media/bread-poster.jpg"
-          autoplay
-          muted
-          loop
-          playsinline
-          controls
-          preload="metadata"
-          aria-label="Task: Take the bread out of the toaster and place it on the blue plate. A comparison of π₀.₅ zero-shot at 2× and AnchorQ at 4×. One hour of RL, no human demos. Followed by nine real-world demonstrations of towel hanging, bread placement, and cup stacking. Green borders mark completed demonstrations."
-        >
-          <source src="./media/real-world-teaser.mp4" type='video/mp4; codecs="avc1.640029"'>
-          <source src="./media/real-world-teaser.webm" type='video/webm; codecs="vp9"'>
-          Your browser does not support embedded video.
-          <a href="./media/real-world-teaser.mp4">Download the AnchorQ real-world demonstrations.</a>
-        </video>
-      </div>
-    </figure>
+  <main class="project">
 
     <section class="method-section" aria-labelledby="method-title">
       <h2 id="method-title">

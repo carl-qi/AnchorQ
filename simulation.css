@@ -4,7 +4,7 @@
   --sim-anchorq: #14977c;
 }
 .simulation-figure { margin: 0; }
-.sim-chart { position: relative; padding: 24px 22px 18px; border: 1px solid #e4e7e5; border-radius: 18px; }
+.sim-chart { position: relative; padding: 24px 22px 18px; border: 1px solid var(--line-color); border-radius: 12px; }
 .sim-controls, .sim-suite-picker, .sim-budget-picker, .sim-legend-row, .sim-legend {
   display: flex; flex-wrap: wrap; align-items: center;
 }
@@ -52,7 +52,7 @@
 .sim-tooltip dt, .sim-tooltip dd { margin: 0; }
 .sim-tooltip dd { font-variant-numeric: tabular-nums; text-align: right; }
 .sim-rollouts { margin-top: 42px; }
-.sim-rollouts > h3 { margin: 0 0 22px; text-align: center; font-size: 23px; letter-spacing: -.3px; }
+.sim-rollouts > h3 { margin: 0 0 22px; text-align: left; font-size: 1.25rem; font-weight: 600; letter-spacing: -.02em; }
 .sim-video-selectors { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 16px; }
 .sim-video-selectors label { display: flex; flex-direction: column; gap: 7px; min-width: 0; font-size: 12px; font-weight: 600; }
 .sim-video-selectors select {
@@ -110,27 +110,5 @@
   .sim-video-selectors { grid-template-columns: minmax(0, 1fr); gap: 12px; }
   .sim-video-pair { grid-template-columns: minmax(0, 1fr); gap: 14px; }
   .sim-rollouts { margin-top: 32px; }
-  .sim-checkpoint-control { min-width: 0; }
-.sim-checkpoint-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.sim-checkpoint-heading output { color: #075d49; font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
-#sim-video-checkpoint {
-  --sim-progress: 100%;
-  display: block; width: 100%; height: 32px; margin: 2px 0 0; padding: 0;
-  appearance: none; -webkit-appearance: none; background: transparent; cursor: pointer;
-}
-#sim-video-checkpoint::-webkit-slider-runnable-track {
-  height: 5px; border-radius: 999px;
-  background: linear-gradient(to right, #14977c var(--sim-progress), #dce5df var(--sim-progress));
-}
-#sim-video-checkpoint::-webkit-slider-thumb {
-  appearance: none; -webkit-appearance: none; width: 18px; height: 18px; margin-top: -6.5px;
-  border: 3px solid #fff; border-radius: 50%; background: #14977c; box-shadow: 0 0 0 1px #12836c;
-}
-#sim-video-checkpoint::-moz-range-track { height: 5px; border-radius: 999px; background: #dce5df; }
-#sim-video-checkpoint::-moz-range-progress { height: 5px; border-radius: 999px; background: #14977c; }
-#sim-video-checkpoint::-moz-range-thumb {
-  width: 12px; height: 12px; border: 3px solid #fff; border-radius: 50%; background: #14977c; box-shadow: 0 0 0 1px #12836c;
-}
-.sim-checkpoint-ticks { display: flex; justify-content: space-between; color: #47594e; font-size: 10px; font-variant-numeric: tabular-nums; }
-.sim-task-description { font-size: 15px; }
+  .sim-task-description { font-size: 15px; }
 }
