@@ -36,7 +36,8 @@ body {
 
 .project,
 .hero-meta,
-.hero-title {
+.hero-title,
+.hero-media {
   width: 100%;
   max-width: var(--content-width);
   margin: 0 auto;
@@ -53,17 +54,11 @@ body {
   color: var(--text-color);
 }
 
-.hero-media {
-  width: 100%;
-  background: #0d0f12;
-}
-
 .teaser {
   margin: 0;
 }
 
 .hero-media .video-frame {
-  border-radius: 0;
   background: #0d0f12;
 }
 
@@ -655,7 +650,8 @@ video:focus-visible {
 @media (max-width: 560px) {
   .project,
   .hero-meta,
-  .hero-title {
+  .hero-title,
+  .hero-media {
     padding-right: 16px;
     padding-left: 16px;
   }
